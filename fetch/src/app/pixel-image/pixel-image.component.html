@@ -1,0 +1,37 @@
+<form [formGroup]="pixelImageForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="height">
+            Height
+        </label>
+        <br>
+        <input id="height" type="number" formControlName="height" min="1" required>
+    </div>
+
+    <div>
+        <label for="width">
+            Width
+        </label>
+        <br>
+        <input id="width" type="number" formControlName="width" min="1" required>
+    </div>
+
+    <div>
+        <label for="corners">
+            Corner Points
+        </label>
+        <br>
+        <textarea id="corners" formControlName="corners" required
+        rows="5" cols="60"></textarea>
+    </div>
+    <button class="button" type="submit">Calculate</button>
+</form>
+<div *ngIf="hasResult()">
+    <p>Pixel Locations:</p>
+    <p>[</p>
+</div>
+<div *ngFor="let row of result.reverse()">
+    <pre>{{stringify(row)}},</pre>
+</div>
+<div *ngIf="hasResult()">
+    <p>]</p>
+</div>

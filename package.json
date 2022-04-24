@@ -1,0 +1,17 @@
+{
+  "name": "fetch-express-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "begin": "concurrently --kill-others \"node server.js\" \"cd fetch && ng serve --host 0.0.0.0\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.3"
+  }
+}

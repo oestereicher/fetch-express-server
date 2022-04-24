@@ -1,5 +1,9 @@
 # Fetch Machine Learning Engineer Pixel Coordinate Calculator
 Express web server for calculating pixel locations given corner coordinates and image dimensions.
+
+## Info
+Http server logic is in server.js. All of the code for the angular UI is in the fetch directory.
+
 ## Usage
 Download the docker image
 
@@ -25,3 +29,6 @@ When the docker container starts, it also spins up an angular UI, running on por
 You'll see boxes where you can enter the height, width and corner points. Enter integers into the height and width boxes, and a 4x2 array of numbers into the corner points box.
 
 When you hit "Calculate" the pixel locations will appear at the bottom of the screen. Note that this output (unlike what the HTTP request returns) is formatted so that the points match the layout of the coordinate system. Basically `pixels[0][0]` is in the bottom left corner, and `pixels[height - 1][width - 1]` is in the top right corner, for visual purposes.
+
+## Testing
+Sample tests can be run by running `python test.py` in the root directory within the docker container. If you would like to add more tests, add the input and expected output to `test_input.json` and `test_output.json` respectively. Make sure that your test input and output are entered in the same order in the different files. If tests are successful you should get the message "All tests passed successfully!"

@@ -43,6 +43,8 @@ function getPixelLocations(dimensions, cornerPoints) {
     const height = dimensions[0];
     const width = dimensions[1];
     rect = new Rectangle(cornerPoints);
+    
+    // determine how far apart each pixel will be spaced
     xPixelSpacing = rect.getWidthLen() / (width - 1);
     yPixelSpacing = rect.getHeightLen() / (height - 1);
 
